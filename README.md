@@ -6,14 +6,12 @@ Local ComfyUI style/config assets for Mac Mini and ASUS ComfyUI installs.
 
 ### WAS Node Suite Fooocus styles
 
-Generated from:
-
-`custom_nodes/fooocus_nodes/sdxl_styles/*.json`
+Generated from Fooocus style JSON files.
 
 Output files:
 
-- `was-ns/styles/styles.csv`
-- `was-ns/styles/fooocus_styles_for_was.csv`
+- was-ns/styles/styles.csv
+- was-ns/styles/fooocus_styles_for_was.csv
 
 These add Fooocus style presets to the WAS / was-ns Prompt Styles Selector node.
 
@@ -35,4 +33,4 @@ Then restart ComfyUI.
 
 ## Notes
 
-The WAS node reads an A1111-style styles.csv path from its config. These files are local convenience assets, not upstream WAS code changes.
+These are local convenience assets, not upstream WAS code changes.
