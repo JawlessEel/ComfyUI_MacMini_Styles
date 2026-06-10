@@ -1,0 +1,29 @@
+ComfyUI_Fooocus_KSampler local compatibility fix.
+
+Environment:
+- ComfyUI v0.24.0
+- Python 3.12.13
+- macOS / Apple Silicon Mac mini
+- venv install
+- Path: /Volumes/MacMoneyMakerSSD/Ai_apps/ComfyUI/custom_nodes/ComfyUI_Fooocus_KSampler
+
+Files changed:
+- sampler/Fooocus/patch.py
+- sampler/Fooocus/core.py
+
+Fixes:
+1. Replaced stale comfy.samplers imports:
+   - old: from comfy.samplers import model_management, lcm, math
+   - new: import comfy.model_management as model_management
+   - new: from math import lcm
+
+2. Replaced old comfy.sample additional-model logic:
+   - old: comfy.sample.load_additional_models
+   - new: comfy.sampler_helpers.get_additional_models
+
+3. Replaced cleanup call:
+   - old: comfy.sample.cleanup_additional_models
+   - new: comfy.sampler_helpers.cleanup_additional_models
+
+Reason:
+The custom node expects older ComfyUI internal APIs that moved or changed in modern ComfyUI.
